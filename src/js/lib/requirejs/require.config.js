@@ -5,52 +5,6 @@
     buildCSS: false,
     inlineText: true,
 
-    // config: {
-    //     i18n: {
-    //         locale: (function() {
-    //             try {
-    //                 var lang = 'en';
-    //                 var reg = new RegExp('(^| )lang=([^;]*)(;|$)');
-    //                 var m = {'en': true, 'zh-cn': true};
-    //                 var arr = document.cookie.match(reg);
-    //                 if (arr) { lang = unescape(arr[2]); }
-    //                 if (!m[lang]) { lang = 'en'; }
-    //                 return lang;
-    //             } catch (e) {
-    //                 // 打包环境
-    //             }
-    //         })()
-    //     }
-    // },
-
-    // map: {
-    //     '*': {
-    //         'css': 'requirejs/css.min'
-    //     }
-    // },
-
-    // text: {
-    //    onXhr: function (xhr, url) {
-    //        xhr.setRequestHeader('X-Requested-Width', 'XMLHttpRequest');
-    //        //Called after the XHR has been created and after the
-    //        //xhr.open() call, but before the xhr.send() call.
-    //        //Useful time to set headers.
-    //        //xhr: the xhr object
-    //        //url: the url that is being used with the xhr object.
-    //    },
-    // },
-    // map: {
-
-    //    // 不同模块加载不同版本加载
-    //    'api1' : {
-    //        'jquery' : '版本1'
-    //    },
-
-    //    'api2': {
-    //        'jquery': '版本2'
-    //    }
-    // },
-
     paths: {
         '@': 'app', // 废弃，这个加载方式会导致text!加载路径错误
 
@@ -83,6 +37,9 @@
         
         // 'jquery.scrollTo': 'lib/jquery/jquery.scrollTo',
 
+        // orienter
+        'orienter': 'lib/orienter/orienter',
+
         // 'swiper': 'lib/swiper/swiper-3.4.2.jquery.min',
 
         // 'bootstrap': 'lib/bootstrap/bootstrap-3.3.7.min',
@@ -111,7 +68,7 @@
         'video': 'app/common/video',
 
         'source' : 'app/source',
-        'index' : 'app/index',
+        'index' : 'app/usr/index',
 
         'script': 'app/script',
     },
