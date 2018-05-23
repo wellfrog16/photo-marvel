@@ -29,24 +29,47 @@ define([
             if (e.g >= 50 || e.g <= -50) { return; }
 
             //
-            const originBeta = 45;
+            const originBeta = 35;
             let beta = e.b * -1 + originBeta;
 
+            const maxDeg = 20;
+
             // 最大变化角度为 正负40度
-            if (beta >= 40) { beta = 40; }
-            if (beta <= -40) { beta = -40; }
+            if (beta >= maxDeg) { beta = maxDeg; }
+            if (beta <= -maxDeg) { beta = -maxDeg; }
 
             // const originGamma = 45;
             // console.log(e);
             let gamma = e.g;
 
             // 最大变化角度为 正负40度
-            if (gamma >= 40) { gamma = 40; }
-            if (gamma <= -40) { gamma = -40; }
+            if (gamma >= maxDeg) { gamma = maxDeg; }
+            if (gamma <= -maxDeg) { gamma = -maxDeg; }
 
-            $('.box').text(gamma);
             // console.log(e);
             $('.box').css('transform', `rotateX(${beta}deg) rotateY(${gamma}deg) rotateZ(0deg)`);
+
+            let shadowY = 0;
+            let shadowX = 0;
+
+            if (beta > 0) {
+                shadowY = parseInt(beta / 10) + 1;
+            }
+
+            if (beta < 0) {
+                shadowY = parseInt(beta / 10) - 1;
+            }
+
+            if (gamma > 0) {
+                shadowX = parseInt(gamma / 10) + 1;
+            }
+
+            if (gamma < 0) {
+                shadowX = parseInt(gamma / 10) - 1;
+            }
+
+            $('.box').css('box-shadow', `${shadowX}px ${shadowY * -1}px 4px 1px #333`);
+            // $('.box').text(e.b);
         };
         o.init();
     };
